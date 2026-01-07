@@ -36,7 +36,7 @@ const ContactUs: React.FC = () => {
       title: 'Business Hours',
       details: [
         'Monday - Saturday',
-        '9:00 AM - 6:00 PM',
+        '9:00 AM - 9:00 PM',
         'Sunday: Closed'
       ]
     }
@@ -52,7 +52,7 @@ const ContactUs: React.FC = () => {
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#FFD700] mx-auto mb-6 sm:mb-8"></div>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-            Ready to start your textile sourcing journey? Get in touch with our expert team. 
+            Ready to start your textile sourcing journey? Get in touch with our expert team.
             We're here to help you find the perfect solutions for your business needs.
           </p>
         </div>
@@ -86,7 +86,7 @@ const ContactUs: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl font-bold text-[#222222] mb-4 sm:mb-6">Find Us</h2>
             <div className="w-16 sm:w-24 h-1 bg-[#FFD700] mx-auto"></div>
           </div>
-          
+
           <div className="bg-gray-300 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl h-64 sm:h-80 lg:h-96">
             {/* Placeholder for map - In production, integrate with Google Maps */}
             <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
@@ -107,7 +107,7 @@ const ContactUs: React.FC = () => {
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#222222] mb-6 sm:mb-8">Need Immediate Help?</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             <a
               href="https://wa.me/919342752821"
@@ -121,7 +121,7 @@ const ContactUs: React.FC = () => {
                 <div className="text-green-100 text-sm">Get instant responses</div>
               </div>
             </a>
-            
+
             <a
               href="tel:+919342752821"
               className="flex items-center justify-center bg-[#800000] hover:bg-[#600000] text-white p-4 sm:p-6 rounded-xl transition-all duration-300 transform hover:scale-105"

@@ -29,10 +29,10 @@ export const useCartStore = create<CartState>()(
     (set, get) => ({
       items: [],
       isCartOpen: false,
-      
+
       addToCart: (item, quantity) => {
         const existingItem = get().items.find(cartItem => cartItem.id === item.id)
-        
+
         if (existingItem) {
           set(state => ({
             items: state.items.map(cartItem =>
@@ -47,42 +47,42 @@ export const useCartStore = create<CartState>()(
           }))
         }
       },
-      
+
       removeFromCart: (id) => {
         set(state => ({
           items: state.items.filter(item => item.id !== id)
         }))
       },
-      
+
       updateQuantity: (id, quantity) => {
         if (quantity <= 0) {
           get().removeFromCart(id)
           return
         }
-        
+
         set(state => ({
           items: state.items.map(item =>
             item.id === id ? { ...item, quantity } : item
           )
         }))
       },
-      
+
       clearCart: () => {
         set({ items: [] })
       },
-      
+
       openCart: () => {
         set({ isCartOpen: true })
       },
-      
+
       closeCart: () => {
         set({ isCartOpen: false })
       },
-      
+
       getTotalItems: () => {
-        return get().items.reduce((total, item) => total + item.quantity, 0)
+        return get().items.length
       },
-      
+
       getTotalPrice: () => {
         return get().items.reduce((total, item) => total + (item.price * item.quantity), 0)
       }

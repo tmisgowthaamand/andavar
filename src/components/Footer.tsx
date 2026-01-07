@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Instagram, MessageCircle, Linkedin, MapPin, Phone, Mail, ArrowUp } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowUp } from 'lucide-react'
 import { getImageUrl } from '../utils/imageUtils'
 import { CONTACT } from '../data/constants'
 
@@ -101,39 +101,9 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-title text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-[#FFD700]">Connect With Us</h3>
             
-            <div className="flex space-x-3 sm:space-x-4 mb-4 sm:mb-6">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#800000] p-2 sm:p-3 rounded-full hover:bg-[#600000] transition-all duration-300 transform hover:scale-110"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
-              </a>
-              <a
-                href="https://wa.me/919342752821"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#800000] p-2 sm:p-3 rounded-full hover:bg-[#600000] transition-all duration-300 transform hover:scale-110"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#800000] p-2 sm:p-3 rounded-full hover:bg-[#600000] transition-all duration-300 transform hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
-              </a>
-            </div>
-
             <div className="font-text text-xs sm:text-sm text-gray-300">
               <p className="mb-1 sm:mb-2">Business Hours:</p>
-              <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+              <p>Mon - Sat: 9:00 AM - 9:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>

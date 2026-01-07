@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { checkoutFormSchema, type CheckoutFormData } from '../schemas/checkoutForm'
 import { useCartStore } from '../store/cartStore'
-import { countries } from '../data/products'
 import { useNavigate } from 'react-router-dom'
 import { useFormSubmission } from '../hooks/useFormSubmission'
 import { ShoppingBag, CreditCard, Plus, Minus } from 'lucide-react'
@@ -19,7 +18,10 @@ const Checkout: React.FC = () => {
     handleSubmit,
     formState: { errors }
   } = useForm<CheckoutFormData>({
-    resolver: zodResolver(checkoutFormSchema)
+    resolver: zodResolver(checkoutFormSchema),
+    defaultValues: {
+      country: 'India'
+    }
   })
 
   React.useEffect(() => {
@@ -43,13 +45,6 @@ const Checkout: React.FC = () => {
   return (
     <div className="pt-16 lg:pt-20 min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-[#222222] mb-4">
-            Checkout
-          </h1>
-          <div className="w-16 sm:w-24 h-1 bg-[#FFD700] mx-auto"></div>
-        </div>
-
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Order Summary */}
           <div className="order-2 lg:order-1">
@@ -195,14 +190,10 @@ const Checkout: React.FC = () => {
                   </label>
                   <select
                     {...register('country')}
-                    className="font-text w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent"
+                    className="font-text w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 cursor-not-allowed"
+                    disabled
                   >
-                    <option value="">Select your country</option>
-                    {countries.map((country) => (
-                      <option key={country} value={country}>
-                        {country}
-                      </option>
-                    ))}
+                    <option value="India">India</option>
                   </select>
                   {errors.country && (
                     <p className="font-text mt-1 text-sm text-red-600">{errors.country.message}</p>

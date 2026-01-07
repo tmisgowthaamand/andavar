@@ -20,8 +20,8 @@ const Hero: React.FC = () => {
               Trusted Worldwide.
             </h1>
             <p className="font-text text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
-              From traditional sarees to modern menswear, Andavar Textile delivers 
-              heritage and quality at scale. Serving global buyers with authentic 
+              From traditional sarees to modern menswear, Andavar Textile delivers
+              heritage and quality at scale. Serving global buyers with authentic
               Indian craftsmanship since decades.
             </p>
             <button
@@ -44,19 +44,19 @@ const Hero: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#800000]/20 to-transparent"></div>
             </div>
-            
+
             {/* Floating Stats */}
             <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-white p-3 sm:p-6 rounded-xl shadow-xl border">
               <div className="text-center">
-                <div className="font-title text-xl sm:text-2xl font-bold text-[#800000]">25+</div>
+                <div className="font-title text-xl sm:text-2xl font-bold text-[#800000]">7+</div>
                 <div className="font-text text-xs sm:text-sm text-gray-600">Years Experience</div>
               </div>
             </div>
-            
+
             <div className="absolute -top-4 -right-2 sm:-top-6 sm:-right-6 bg-white p-3 sm:p-6 rounded-xl shadow-xl border">
               <div className="text-center">
-                <div className="font-title text-xl sm:text-2xl font-bold text-[#800000]">50+</div>
-                <div className="font-text text-xs sm:text-sm text-gray-600">Countries Served</div>
+                <div className="font-title text-xl sm:text-2xl font-bold text-[#800000]">25+</div>
+                <div className="font-text text-xs sm:text-sm text-gray-600">States in India</div>
               </div>
             </div>
           </div>
