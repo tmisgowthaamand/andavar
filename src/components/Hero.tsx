@@ -17,11 +17,11 @@ const Hero: React.FC = () => {
             <h1 className="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#222222] leading-tight mb-4 sm:mb-6">
               <span className="text-[#800000]">Timeless Textiles.</span>
               <br />
-              Trusted Worldwide.
+              Trusted Across India.
             </h1>
             <p className="font-text text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
               From traditional sarees to modern menswear, Andavar Textile delivers
-              heritage and quality at scale. Serving global buyers with authentic
+              heritage and quality at scale. Serving buyers across India with authentic
               Indian craftsmanship since decades.
             </p>
             <button

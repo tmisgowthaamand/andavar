@@ -41,14 +41,14 @@ const AboutSection: React.FC = () => {
             <div className="w-12 sm:w-16 h-1 bg-[#FFD700] mb-4 sm:mb-6"></div>
 
             <p className="font-text text-base sm:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
-              Based in Tamil Nadu, we specialize in manufacturing and exporting
+              Based in Tamil Nadu, we specialize in manufacturing
               culturally rich Indian garments. Our focus is on quality, heritage,
-              and trust, serving global textile buyers who value authentic craftsmanship.
+              and trust, serving textile buyers across India who value authentic craftsmanship.
             </p>
 
             <p className="font-text text-sm sm:text-base text-gray-600 leading-relaxed mb-6 sm:mb-8">
               With over 7 years of experience in the textile industry, we have built
-              lasting relationships with clients across 50+ countries. Our state-of-the-art
+              lasting relationships with clients across India. Our state-of-the-art
               manufacturing facility combines traditional techniques with modern technology
               to deliver exceptional products.
             </p>

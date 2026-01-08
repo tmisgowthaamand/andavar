@@ -16,8 +16,8 @@ const AboutUs: React.FC = () => {
     },
     {
       icon: Globe,
-      title: 'Global Reach',
-      description: 'Connecting cultures through authentic Indian textiles worldwide'
+      title: 'National Reach',
+      description: 'Connecting cultures through authentic Indian textiles across India'
     },
     {
       icon: Target,
@@ -28,9 +28,9 @@ const AboutUs: React.FC = () => {
 
   const milestones = [
     { year: '2018', event: 'Company founded in Tamil Nadu' },
-    { year: '2020', event: 'First international export to UK' },
+    { year: '2020', event: 'Expanded operations across India with premium quality textiles' },
     { year: '2022', event: 'ISO certification achieved' },
-    { year: 'Still', event: 'Serving 50+ countries globally with premium quality textiles' }
+    { year: 'Still', event: 'Continuing to deliver excellence across India with premium quality textiles' }
   ]
 
   return (
@@ -45,7 +45,7 @@ const AboutUs: React.FC = () => {
             <div className="w-16 sm:w-24 h-1 bg-[#FFD700] mx-auto mb-6 sm:mb-8"></div>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               For over 7 years, we have been weaving stories of tradition, quality, and trust.
-              From our roots in Tamil Nadu to serving customers across 50+ countries, our journey
+              From our roots in Tamil Nadu to serving customers across India, our journey
               is one of passion, dedication, and unwavering commitment to excellence.
             </p>
           </div>
@@ -66,15 +66,15 @@ const AboutUs: React.FC = () => {
                   craftsmanship that makes each piece unique.
                 </p>
                 <p>
-                  What started as a local manufacturing unit has evolved into a globally recognized textile export
+                  What started as a local manufacturing unit has evolved into a nationally recognized textile
                   company. We have carefully balanced growth with our commitment to quality, ensuring that every
-                  garment that leaves our facility meets the highest international standards.
+                  garment that leaves our facility meets the highest standards.
                 </p>
                 <p>
                   Today, we employ over 500 skilled artisans and workers, each contributing their expertise to
                   create textiles that tell stories of tradition, innovation, and excellence. Our state-of-the-art
                   facility combines traditional weaving techniques with modern technology to deliver products that
-                  satisfy the most discerning global buyers.
+                  satisfy the most discerning buyers across India.
                 </p>
               </div>
             </div>

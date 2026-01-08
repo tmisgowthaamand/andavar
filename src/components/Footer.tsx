@@ -26,17 +26,17 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="mb-4 sm:mb-6">
               <Link to="/" className="inline-block">
-                <img 
+                <img
                   src={getImageUrl('/images/logo/andavar-logo.png')}
-                  alt="Andavar Textile Logo" 
+                  alt="Andavar Textile Logo"
                   className="h-12 w-auto sm:h-16 md:h-20 bg-white p-1 rounded-md shadow-sm"
                 />
               </Link>
             </div>
-            
+
             <p className="font-text text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base max-w-lg">
-              Leading manufacturer and exporter of traditional and contemporary 
-              Indian garments, serving global buyers with authentic craftsmanship 
+              Leading manufacturer of traditional and contemporary
+              Indian garments, serving buyers across India with authentic craftsmanship
               and premium quality textiles.
             </p>
 
@@ -50,12 +50,12 @@ const Footer: React.FC = () => {
                   Tirunelveli - 627416, Tamil Nadu, India
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-[#FFD700]" />
                 <span className="font-text text-xs sm:text-sm text-gray-300">+91 93427 52821</span>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-[#FFD700] mt-1 flex-shrink-0" />
                 <div className="space-y-1">
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
           {/* Social & Connect */}
           <div>
             <h3 className="font-title text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-[#FFD700]">Connect With Us</h3>
-            
+
             <div className="font-text text-xs sm:text-sm text-gray-300">
               <p className="mb-1 sm:mb-2">Business Hours:</p>
               <p>Mon - Sat: 9:00 AM - 9:00 PM</p>
@@ -113,32 +113,32 @@ const Footer: React.FC = () => {
         <div className="border-t border-[#800000] mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6">
             <p className="font-text text-gray-300 text-xs sm:text-sm">
-              © 2025 Andavar Textile. All rights reserved. | Designed for global excellence.
+              © 2025 Andavar Textile. All rights reserved. | Designed for excellence across India.
             </p>
             <div className="flex items-center space-x-4">
-              <Link 
-                to="/privacy-policy" 
+              <Link
+                to="/privacy-policy"
                 className="font-text text-gray-300 hover:text-white text-xs sm:text-sm transition-colors"
               >
                 Privacy Policy
               </Link>
               <span className="text-gray-500">|</span>
-              <Link 
-                to="/terms-conditions" 
+              <Link
+                to="/terms-conditions"
                 className="font-text text-gray-300 hover:text-white text-xs sm:text-sm transition-colors"
               >
                 Terms & Conditions
               </Link>
               <span className="text-gray-500">|</span>
-              <Link 
-                to="/shipping-policy" 
+              <Link
+                to="/shipping-policy"
                 className="font-text text-gray-300 hover:text-white text-xs sm:text-sm transition-colors"
               >
                 Shipping Policy
               </Link>
               <span className="text-gray-500">|</span>
-              <Link 
-                to="/cancellation-refund-policy" 
+              <Link
+                to="/cancellation-refund-policy"
                 className="font-text text-gray-300 hover:text-white text-xs sm:text-sm transition-colors"
               >
                 Cancellation & Refund
