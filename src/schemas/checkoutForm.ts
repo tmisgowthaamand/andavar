@@ -7,6 +7,7 @@ export const checkoutFormSchema = z.object({
   company: z.string().optional(),
   country: z.string().min(1, 'Please select your country'),
   address: z.string().min(10, 'Please enter your complete address'),
+  paymentMethod: z.literal('cod'),
   notes: z.string().optional(),
 })
 

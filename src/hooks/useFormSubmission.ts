@@ -58,6 +58,7 @@ export const useFormSubmission = () => {
         company: formData.company || null,
         country: formData.country,
         address: formData.address,
+        payment_method: formData.paymentMethod,
         notes: formData.notes || null,
         items: cartItems.map(item => ({
           id: item.id,
@@ -69,11 +70,13 @@ export const useFormSubmission = () => {
         total_amount: totalAmount
       }
 
+      const orderId = `ORD-${Math.random().toString(36).substr(2, 9).toUpperCase()}`
+
       // If Supabase is configured, try to submit
       if (supabase) {
         const { error } = await supabase
           .from('order_submissions')
-          .insert([orderData])
+          .insert([{ ...orderData, order_id: orderId }])
 
         if (error) {
           console.error('Supabase error:', error)
@@ -81,17 +84,16 @@ export const useFormSubmission = () => {
         }
       } else {
         // Fallback: Log order data to console for development
-        console.log('Order submitted (no database):', orderData)
+        console.log('Order submitted (no database):', { ...orderData, order_id: orderId })
         // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 1000))
       }
 
-      toast.success('Order request submitted successfully! We will contact you soon.')
-      return true
+      return orderId
     } catch (error) {
       console.error('Order submission error:', error)
       toast.error('Failed to submit order. Please try again.')
-      return false
+      return null
     } finally {
       setIsSubmitting(false)
     }

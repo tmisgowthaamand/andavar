@@ -11,7 +11,8 @@ import Products from './pages/Products'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import Checkout from './pages/Checkout'
-import ThankYou from './pages/ThankYou'
+import Cart from './pages/Cart'
+import OrderSuccess from './pages/OrderSuccess'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsAndConditions from './pages/TermsAndConditions'
 import ShippingPolicy from './pages/ShippingPolicy'
@@ -42,8 +43,9 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/order-success" element={<OrderSuccess />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsAndConditions />} />
             <Route path="/shipping-policy" element={<ShippingPolicy />} />

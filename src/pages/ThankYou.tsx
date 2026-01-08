@@ -1,8 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { CheckCircle, ArrowRight, Phone, Mail } from 'lucide-react'
 
 const ThankYou: React.FC = () => {
+  const location = useLocation()
+  const orderId = location.state?.orderId || `ORD-${Math.random().toString(36).substr(2, 9).toUpperCase()}`
+
   return (
     <div className="pt-16 lg:pt-20 min-h-screen bg-gradient-to-br from-[#F9F9F9] to-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
@@ -16,12 +19,18 @@ const ThankYou: React.FC = () => {
           </div>
 
           <div className="bg-white rounded-xl p-6 sm:p-8 lg:p-12 shadow-lg mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#800000] mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#800000] mb-2">
               Your Order Request Has Been Submitted Successfully!
             </h2>
+            <div className="mb-6 bg-red-50 py-4 rounded-lg">
+              <span className="text-gray-500 text-xs font-bold uppercase tracking-widest">Order Reference ID</span>
+              <p className="text-3xl sm:text-4xl font-black text-[#800000] mt-1">
+                #{orderId}
+              </p>
+            </div>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
-              We have received your order request and our team will review it shortly. 
-              You can expect to hear from us within 24 hours with detailed pricing, 
+              We have received your order request and our team will review it shortly.
+              You can expect to hear from us within 24 hours with detailed pricing,
               availability, and next steps.
             </p>
 
@@ -69,7 +78,7 @@ const ThankYou: React.FC = () => {
 
           <div className="text-center">
             <p className="text-gray-500 text-sm">
-              Order Reference: #{Date.now().toString().slice(-8)}
+              Order Reference: #{orderId}
             </p>
           </div>
         </div>

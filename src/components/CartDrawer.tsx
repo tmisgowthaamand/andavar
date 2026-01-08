@@ -7,28 +7,28 @@ import type { MouseEvent } from 'react' // Import MouseEvent type
 import { getImageUrl } from '../utils/imageUtils'
 
 const CartDrawer: React.FC = () => {
-  const { 
-    items, 
-    isCartOpen, 
-    closeCart, 
-    updateQuantity, 
-    removeFromCart, 
+  const {
+    items,
+    isCartOpen,
+    closeCart,
+    updateQuantity,
+    removeFromCart,
     getTotalPrice,
-    getTotalItems 
+    getTotalItems
   } = useCartStore()
 
   if (!isCartOpen) return null
 
   return (
     <AnimatePresence>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 bg-black bg-opacity-50 z-50"
         onClick={() => closeCart()}
       >
-        <motion.div 
+        <motion.div
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
@@ -70,8 +70,8 @@ const CartDrawer: React.FC = () => {
               ) : (
                 <div className="space-y-4">
                   {items.map((item) => (
-                    <motion.div 
-                      key={item.id} 
+                    <motion.div
+                      key={item.id}
                       className="flex space-x-4 p-3 border rounded-lg hover:shadow-md transition-shadow duration-200"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -148,15 +148,25 @@ const CartDrawer: React.FC = () => {
                     ₹{getTotalPrice().toLocaleString('en-IN')}
                   </span>
                 </div>
-                
-                <Link
-                  to="/checkout"
-                  onClick={closeCart}
-                  className="w-full bg-[#800000] text-white py-3 rounded-lg font-semibold hover:bg-[#600000] text-center block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  Proceed to Checkout
-                </Link>
-                
+
+                <div className="flex flex-col space-y-3">
+                  <Link
+                    to="/cart"
+                    onClick={closeCart}
+                    className="w-full border border-[#800000] text-[#800000] py-3 rounded-lg font-semibold hover:bg-red-50 text-center block transition-all duration-200"
+                  >
+                    View Shopping Cart
+                  </Link>
+
+                  <Link
+                    to="/checkout"
+                    onClick={closeCart}
+                    className="w-full bg-[#800000] text-white py-3 rounded-lg font-semibold hover:bg-[#600000] text-center block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    Proceed to Checkout
+                  </Link>
+                </div>
+
                 <div className="mt-3 text-center">
                   <Link
                     to="/products"

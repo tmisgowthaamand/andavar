@@ -1,11 +1,12 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { checkoutFormSchema, type CheckoutFormData } from '../schemas/checkoutForm'
 import { useCartStore } from '../store/cartStore'
 import { useNavigate } from 'react-router-dom'
 import { useFormSubmission } from '../hooks/useFormSubmission'
-import { ShoppingBag, CreditCard, Plus, Minus } from 'lucide-react'
+import { ShoppingBag, CreditCard, Plus, Minus, User } from 'lucide-react'
 import { getImageUrl } from '../utils/imageUtils'
 
 const Checkout: React.FC = () => {
@@ -20,7 +21,8 @@ const Checkout: React.FC = () => {
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
-      country: 'India'
+      country: 'India',
+      paymentMethod: 'cod'
     }
   })
 
@@ -31,10 +33,15 @@ const Checkout: React.FC = () => {
   }, [items.length, navigate])
 
   const onSubmit = async (data: CheckoutFormData) => {
-    const success = await submitOrderForm(data, items)
-    if (success) {
+    const orderId = await submitOrderForm(data, items)
+    if (orderId) {
+      toast.success(`Order request submitted successfully! Your order number is ${orderId}. We will contact you soon.`, {
+        duration: 6000,
+      })
       clearCart()
-      navigate('/thank-you')
+      setTimeout(() => {
+        navigate('/order-success', { state: { orderId } })
+      }, 500)
     }
   }
 
@@ -118,7 +125,7 @@ const Checkout: React.FC = () => {
           <div className="order-1 lg:order-2">
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
               <div className="flex items-center mb-6">
-                <CreditCard className="h-6 w-6 text-[#800000] mr-3" />
+                <User className="h-6 w-6 text-[#800000] mr-3" />
                 <h2 className="font-title text-xl font-bold text-[#222222]">Contact Information</h2>
               </div>
 
@@ -227,6 +234,29 @@ const Checkout: React.FC = () => {
                   />
                 </div>
 
+                <div className="space-y-4">
+                  <div className="flex items-center mb-4">
+                    <CreditCard className="h-6 w-6 text-[#800000] mr-3" />
+                    <h2 className="font-title text-xl font-bold text-[#222222]">Payment Method</h2>
+                  </div>
+
+                  <div className="border-2 border-[#800000] rounded-xl p-4 bg-red-50/30">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        {...register('paymentMethod')}
+                        value="cod"
+                        defaultChecked
+                        className="h-5 w-5 text-[#800000] focus:ring-[#800000] border-gray-300"
+                      />
+                      <div className="ml-4 flex-1">
+                        <span className="block font-text font-bold text-[#222222] text-lg">Cash on Delivery</span>
+                        <span className="block font-text text-sm text-gray-600">Pay when you receive the order</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -238,7 +268,7 @@ const Checkout: React.FC = () => {
                       Processing...
                     </div>
                   ) : (
-                    'Submit Order Request'
+                    'Order Submit'
                   )}
                 </button>
 
